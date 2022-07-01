@@ -3,12 +3,11 @@ import { useForm } from "react-hook-form";
 import Todo from "./Todo";
 
 const Home = () => {
-  const [tasks, setTasks] = useState([]);
   const [reload, setReload] = useState(false);
 const { register, handleSubmit,reset} = useForm();
 const onSubmit = data => {
   console.log(data)
-  const url = `http://localhost:5000/todoList`;
+  const url = `https://arrogant-eds-36335.herokuapp.com/todoList`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -42,14 +41,6 @@ const onSubmit = data => {
                   class="input input-bordered input-primary"
                   required
                   {...register("newTask", { required: true })}
-                />
-                <br />
-                <textarea
-                  type="text"
-                  placeholder="TODO Description Here"
-                  class="textarea textarea-bordered textarea-primary"
-                  required
-                  {...register("description", { required: true })}
                 />
               </div>
               <div class="form-control mt-6">

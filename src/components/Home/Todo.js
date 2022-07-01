@@ -4,7 +4,7 @@ import Todos from "./Todos";
 const Todo = () => {
   const [tasks, setTasks] = useState([]);
   useEffect( ()=>{
-    fetch('http://localhost:5000/todoList')
+    fetch('https://arrogant-eds-36335.herokuapp.com/todoList')
     .then(res => res.json())
     .then(data => setTasks(data));
 }, [])
